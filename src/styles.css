@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --back-ground-color: #000000;
+  --yellow-color: #cacd00;
+  --text-color: #ffffff;
+  --light-gray-color: #c1c1c1;
+  --header-after-scrolled-color: #005e24;
+  --primary-font: "Manrope", sans-serif;
+}
+
+body {
+  font-family: var(--primary-font);
+  background-color: var(--back-ground-color);
+}
