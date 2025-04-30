@@ -1,5 +1,5 @@
 <div class="main-header" [class.scrolled]="scrolled">
-    <img src="../../../../assets/images/12.jpg" alt="" class="main-logo" />
+    <img src="../../../../assets/images/logo.png" alt="" class="main-logo" />
   
     <div class="links-holder">
       <a 
@@ -44,11 +44,10 @@
         (click)="scrollToSection($event,'contact')"
       >Contact</a>
   
-      <a 
-        href="#join" 
-        [class.active-link]="activeLink === 'join'" 
+      <button 
+        class="joinnowbtn"
         (click)="scrollToSection($event,'join')"
-      >Join Now</a>
+      >Join Now</button>
     </div>
   </div>
 
@@ -136,7 +135,15 @@
                      </div>
 
                      <div class="secods-imahe-holder-part">
-                        <img src="../../../../assets/images/12.jpg" alt="">
+                        <div class="image-holder">
+                            <img src="../../../../assets/images/1.jpg" alt="">
+                            <div class="yellow-cornered-box">
+                                <span class="number">10</span>
+                                <span class="text">Mithila dilshan</span>
+                            </div>
+
+                        </div>
+                       
                      </div>
        </div>
 </div>
@@ -471,15 +478,15 @@
  
     <div class="image-main-outer-holder">
         <div class="imageholder">
-            <img src="../../../../assets/images/12.jpg" alt="">
-            <img src="../../../../assets/images/12.jpg" alt="">
-            <img src="../../../../assets/images/12.jpg" alt="">
+            <img src="../../../../assets/images/1.jpg" alt="">
+            <img src="../../../../assets/images/2.jpg" alt="">
+            <img src="../../../../assets/images/3.jpg" alt="">
         </div>
 
         <div class="imageholder">
-            <img src="../../../../assets/images/12.jpg" alt="">
-            <img src="../../../../assets/images/12.jpg" alt="">
-            <img src="../../../../assets/images/12.jpg" alt="">
+            <img src="../../../../assets/images/4.jpg" alt="">
+            <img src="../../../../assets/images/5.jpg" alt="">
+            <img src="../../../../assets/images/1.jpg" alt="">
         </div>
 
     </div>
@@ -731,7 +738,7 @@
 
 <div class="footer-main-holder">
     <div class="part1">
-        <img src="../../../../assets/images/12.jpg" alt="">
+        <img src="../../../../assets/images/logo.png" alt="">
         <span>Colombo's premier fitness destination offering state-of-the-art facilities and personalized training programs since 2015.</span>
         <div class="contact-social-media">
             <img src="../../../../assets/images/star.png" alt="">
