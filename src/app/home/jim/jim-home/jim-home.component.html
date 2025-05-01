@@ -1,71 +1,18 @@
-<div class="main-header" [class.scrolled]="scrolled">
-    <img src="../../../../assets/images/12.jpg" alt="" class="main-logo" />
-  
-    <div class="links-holder">
-      <a 
-        href="#home" 
-        [class.active-link]="activeLink === 'home'" 
-        (click)="scrollToSection($event,'home')"
-      >Home</a>
-  
-      <a 
-        href="#about" 
-        [class.active-link]="activeLink === 'about'" 
-        (click)="scrollToSection($event,'about')"
-      >About</a>
-  
-      <a 
-        href="#services" 
-        [class.active-link]="activeLink === 'services'" 
-        (click)="scrollToSection($event,'services')"
-      >Services</a>
-  
-      <a 
-        href="#membership" 
-        [class.active-link]="activeLink === 'membership'" 
-        (click)="scrollToSection($event,'membership')"
-      >Membership</a>
-  
-      <a 
-        href="#gallery" 
-        [class.active-link]="activeLink === 'gallery'" 
-        (click)="scrollToSection($event,'gallery')"
-      >Gallery</a>
-  
-      <a 
-        href="#success" 
-        [class.active-link]="activeLink === 'success'" 
-        (click)="scrollToSection($event,'success')"
-      >Success Stories</a>
-  
-      <a 
-        href="#contact" 
-        [class.active-link]="activeLink === 'contact'" 
-        (click)="scrollToSection($event,'contact')"
-      >Contact</a>
-  
-      <a 
-        href="#join" 
-        [class.active-link]="activeLink === 'join'" 
-        (click)="scrollToSection($event,'join')"
-      >Join Now</a>
-    </div>
-  </div>
 
-  
+  <app-header></app-header>
 
 
+  
 
 <div class="video-container">
-    <video autoplay muted loop class="bg-video">
-      <source src="../../../../assets/videos/aa.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
+    <!-- autoplay -->
+    <video  muted loop playsinline class="bg-video">
+        <source src="../../../../assets/videos/aa.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
   
     <div class="video-overlay"></div>
-    <div class="video-text">
-        Transform your body
-    </div>
+    
     <div class="video-text-below">
       Elevate your life
     </div>
@@ -136,7 +83,15 @@
                      </div>
 
                      <div class="secods-imahe-holder-part">
-                        <img src="../../../../assets/images/12.jpg" alt="">
+                        <div class="image-holder">
+                            <img src="../../../../assets/images/1.jpg" alt="">
+                            <div class="yellow-cornered-box">
+                                <span class="number">10</span>
+                                <span class="text">Mithila dilshan</span>
+                            </div>
+
+                        </div>
+                       
                      </div>
        </div>
 </div>
@@ -246,44 +201,80 @@
 
 
     <div class="mamabership-plamn-holder">
+            <span class="chips" (click)="selectChip($event,'Daypass')">Day Pass</span>
             <span class="chips" (click)="selectChip($event,'Monthly')">Monthly</span>
             <span class="chips" (click)="selectChip($event,'Quarterly')">Quarterly</span>
+            <span class="chips" (click)="selectChip($event,'BiAnnual')">BI Annual</span>
             <span class="chips" (click)="selectChip($event,'Annual')">Annual</span>
-            <span class="chips" (click)="selectChip($event,'ViewAll')">View All</span>
     </div>
 
     <div class="chnage-on-selected-holder">
+
+
+        <div class="for-mounth" *ngIf="isdaypassselected">
+            <div class="holder1">
+              <span class="popularity">MOST POPULAR</span>
+              <h1 class="membershiptitle">Day Pass Package</h1>
+              <div class="stepperpackageinnerdetails">
+                  <span class="visemounthly">Individual</span>
+                  <span class="viseamount" #value1>1,500</span>
+              </div>
+
+              <div class="stepperpackageinnerdetails">
+                <span class="visemounthly">Couple</span>
+                <span class="viseamount" #value2>2,500</span>
+            </div>
+
+            
+             <a routerLink="/home/jim/registration">registration</a>
+
+            <button class="getstartedbtn" (click)="onGetStarted(value1.innerText, value2.innerText)">Get Started</button>
+            </div>
+             
+       </div>
+
+
+
              <div class="for-mounth" *ngIf="ismounthselected">
                   <div class="holder1">
                     <span class="popularity">MOST POPULAR</span>
-                    <h1 class="membershiptitle">Stepper Package</h1>
+                    <h1 class="membershiptitle">Monthly Package</h1>
                     <div class="stepperpackageinnerdetails">
-                        <span class="visemounthly">Mounthly</span>
-                        <span class="viseamount">14,500</span>
-                    </div>
-                    <div class="stepperpackageinnerdetails">
-                        <span class="visemounthly">Mounthly</span>
-                        <span class="viseamount">14,500</span>
+                        <span class="visemounthly" >30 Days</span>
+                        <span class="viseamount" #value1>6,000</span>
                     </div>
 
-                      <button class="getstartedbtn">Get Started</button>
+ 
+
+                    <!-- (click)="onGetStartedMonthly(value1.innerText, value2.innerText)" -->
+
+                      <button class="getstartedbtn" >Get Started</button>
                   </div>
-                  <div class="holder2">
-                    <span class="popularity">PREMIUM</span>
+                  
 
+
+                  <div class="holder1">
+                    <span class="popularity">MOST POPULAR</span>
                     <h1 class="membershiptitle">Personal Training</h1>
+                    
+
 
                     <div class="stepperpackageinnerdetails">
-                        <span class="visemounthly">Mounthly</span>
-                        <span class="viseamount">14,500</span>
+                        <span class="visemounthly">Individual</span>
+                        <span class="viseamount">20,000</span>
                     </div>
-                    <div class="stepperpackageinnerdetails">
-                        <span class="visemounthly">Mounthly</span>
-                        <span class="viseamount">14,500</span>
-                    </div>
-                    <button class="getstartedbtn">Get Started</button>
 
+                    <div class="stepperpackageinnerdetails">
+                        <span class="visemounthly">Couple</span>
+                        <span class="viseamount">30,000</span>
+                    </div>
+
+                   
+
+                      <button class="getstartedbtn" >Get Started</button>
                   </div>
+
+
              </div>
 
 
@@ -292,12 +283,12 @@
                 <div class="holder1">
                   <h1 class="membershiptitle">Morning Glory</h1>
                   <div class="stepperpackageinnerdetails">
-                      <span class="visemounthly">3 Months</span>
-                      <span class="viseamount">14,500</span>
+                      <span class="visemounthly">Individual</span>
+                      <span class="viseamount">7,500</span>
                   </div>
                   <div class="stepperpackageinnerdetails">
-                      <span class="visemounthly">6 Months</span>
-                      <span class="viseamount">14,500</span>
+                      <span class="visemounthly">Couple</span>
+                      <span class="viseamount">14,000</span>
                   </div>
 
                     <button class="getstartedbtn">Start Morings Right</button>
@@ -307,65 +298,82 @@
                   <h1 class="membershiptitle">Personal Training</h1>
 
                   <div class="stepperpackageinnerdetails">
-                      <span class="visemounthly">Mounthly</span>
-                      <span class="viseamount">14,500</span>
-                  </div>
+                    <span class="visemounthly">Individual</span>
+                    <span class="viseamount">50,000</span>
+                </div>
+                <div class="stepperpackageinnerdetails">
+                    <span class="visemounthly">Couple</span>
+                    <span class="viseamount">85,000</span>
+                </div>
                    
                   <button class="getstartedbtn">Train Like a Pro</button>
 
                 </div>
+
+                <div class="holder2">
+                    <span class="popularity">PREMIUM</span>
+                    <h1 class="membershiptitle">Stepper Package</h1>
+  
+                    <div class="stepperpackageinnerdetails">
+                        <span class="visemounthly">Individual</span>
+                        <span class="viseamount">14,000</span>
+                    </div>
+                    <div class="stepperpackageinnerdetails">
+                        <span class="visemounthly">Couple</span>
+                        <span class="viseamount">25,000</span>
+                    </div>
+                     
+                    <button class="getstartedbtn">Train Like a Pro</button>
+  
+                  </div>
+
            </div>
 
 
 
 
-
-
-
-
-           <div class="for-mounth" *ngIf="isannualselected">
+           <div class="for-mounth" *ngIf="isbiselected">
             <div class="holder1">
-              <span class="popularity">MOST POPULAR</span>
-
-              <h1 class="membershiptitle">Stepper Package</h1>
+              <h1 class="membershiptitle">Morning Glory</h1>
               <div class="stepperpackageinnerdetails">
-                  <span class="visemounthly">3 Months</span>
-                  <span class="viseamount">14,500</span>
-                  <span class="savetext">(save 25%)</span>
-              </div>
-              <div class="stepperpackageinnerdetails">
-                  <span class="visemounthly">6 Months</span>
-                  <span class="viseamount">14,500</span>
-                  <span class="savetext">(save 25%)</span>
-
-              </div>
+                <span class="visemounthly">Individual</span>
+                <span class="viseamount">15,000</span>
+            </div>
+            <div class="stepperpackageinnerdetails">
+                <span class="visemounthly">Couple</span>
+                <span class="viseamount">25,000</span>
+            </div>
 
                 <button class="getstartedbtn">Start Morings Right</button>
             </div>
-
             <div class="holder2">
-              <h1 class="membershiptitle">Moring Glory</h1>
+              <span class="popularity">PREMIUM</span>
+              <h1 class="membershiptitle">Personal Training</h1>
 
               <div class="stepperpackageinnerdetails">
-                  <span class="visemounthly">Mounthly</span>
-                  <span class="viseamount">14,500</span>
-                  <span class="savetext">(save 25%)</span>
-
-              </div>
+                <span class="visemounthly">Individual</span>
+                <span class="viseamount">85,000</span>
+            </div>
+            <div class="stepperpackageinnerdetails">
+                <span class="visemounthly">Couple</span>
+                <span class="viseamount">135,000</span>
+            </div>
                
               <button class="getstartedbtn">Train Like a Pro</button>
 
             </div>
 
-            <div class="holder3">
+            <div class="holder2">
                 <span class="popularity">PREMIUM</span>
-                <h1 class="membershiptitle">Personal Training</h1>
+                <h1 class="membershiptitle">Stepper Package </h1>
   
                 <div class="stepperpackageinnerdetails">
-                    <span class="visemounthly">Mounthly</span>
-                    <span class="viseamount">14,500</span>
-                  <span class="savetext">(save 25%)</span>
-
+                    <span class="visemounthly">Individual</span>
+                    <span class="viseamount">35,000</span>
+                </div>
+                <div class="stepperpackageinnerdetails">
+                    <span class="visemounthly">Couple</span>
+                    <span class="viseamount">45,000</span>
                 </div>
                  
                 <button class="getstartedbtn">Train Like a Pro</button>
@@ -383,69 +391,68 @@
 
 
 
-       <div class="for-mounth" *ngIf="isseeallselected">
-        <div class="holder1">
-          <span class="popularity">MOST POPULAR</span>
+           <div class="for-mounth" *ngIf="isannualselected">
+            <div class="holder1">
+              <span class="popularity">MOST POPULAR</span>
 
-          <h1 class="membershiptitle">Stepper Package</h1>
-          <div class="stepperpackageinnerdetails">
-              <span class="visemounthly">3 Months</span>
-              <span class="viseamount">14,500</span>
-          </div>
-          <div class="stepperpackageinnerdetails">
-              <span class="visemounthly">6 Months</span>
-              <span class="viseamount">14,500</span>
-
-          </div>
-
-          <div class="stepperpackageinnerdetails">
-            <span class="visemounthly">6 Months</span>
-            <span class="viseamount">14,500</span>
-            <span class="savetext">(save 25%)</span>
-
-         </div>
-
-         <div class="stepperpackageinnerdetails">
-            <span class="visemounthly">6 Months</span>
-            <span class="viseamount">14,500</span>
-            <span class="savetext">(save 25%)</span>
-
-         </div>
-
-
-            <button class="getstartedbtn">Start Morings Right</button>
-        </div>
-
-        <div class="holder2">
-          <h1 class="membershiptitle">Moring Glory</h1>
-
-          <div class="stepperpackageinnerdetails">
-              <span class="visemounthly">Mounthly</span>
-              <span class="viseamount">14,500</span>
-              <span class="savetext">(save 25%)</span>
-
-          </div>
-           
-          <button class="getstartedbtn">Train Like a Pro</button>
-
-        </div>
-
-        <div class="holder3">
-            <span class="popularity">PREMIUM</span>
-            <h1 class="membershiptitle">Personal Training</h1>
-
+              <h1 class="membershiptitle">Stepper Package</h1>
+              <div class="stepperpackageinnerdetails">
+                <span class="visemounthly">Individual</span>
+                <span class="viseamount">42,000</span>
+            </div>
             <div class="stepperpackageinnerdetails">
-                <span class="visemounthly">Mounthly</span>
-                <span class="viseamount">14,500</span>
-              <span class="savetext">(save 25%)</span>
+                <span class="visemounthly">Couple</span>
+                <span class="viseamount">70,000</span>
+            </div>
+
+                <button class="getstartedbtn">Start Morings Right</button>
+            </div>
+
+            <div class="holder2">
+              <h1 class="membershiptitle">Moring Glory</h1>
+
+              <div class="stepperpackageinnerdetails">
+                <span class="visemounthly">Individual</span>
+                <span class="viseamount">25,000</span>
+            </div>
+            <div class="stepperpackageinnerdetails">
+                <span class="visemounthly">Couple</span>
+                <span class="viseamount">40,000</span>
+            </div>
+               
+              <button class="getstartedbtn">Train Like a Pro</button>
 
             </div>
-             
-            <button class="getstartedbtn">Train Like a Pro</button>
 
-          </div>
+            <div class="holder3">
+                <span class="popularity">PREMIUM</span>
+                <h1 class="membershiptitle">Personal Training</h1>
+  
+                <div class="stepperpackageinnerdetails">
+                    <span class="visemounthly">Individual</span>
+                    <span class="viseamount">150,000</span>
+                </div>
+                <div class="stepperpackageinnerdetails">
+                    <span class="visemounthly">Couple</span>
+                    <span class="viseamount">250,000</span>
+                </div>
+                 
+                <button class="getstartedbtn">Train Like a Pro</button>
+  
+              </div>
 
-   </div>
+       </div>
+
+
+
+
+
+
+
+
+
+
+      
  
     </div>
 
@@ -471,15 +478,15 @@
  
     <div class="image-main-outer-holder">
         <div class="imageholder">
-            <img src="../../../../assets/images/12.jpg" alt="">
-            <img src="../../../../assets/images/12.jpg" alt="">
-            <img src="../../../../assets/images/12.jpg" alt="">
+            <img src="../../../../assets/images/1.jpg" alt="">
+            <img src="../../../../assets/images/2.jpg" alt="">
+            <img src="../../../../assets/images/3.jpg" alt="">
         </div>
 
         <div class="imageholder">
-            <img src="../../../../assets/images/12.jpg" alt="">
-            <img src="../../../../assets/images/12.jpg" alt="">
-            <img src="../../../../assets/images/12.jpg" alt="">
+            <img src="../../../../assets/images/4.jpg" alt="">
+            <img src="../../../../assets/images/5.jpg" alt="">
+            <img src="../../../../assets/images/1.jpg" alt="">
         </div>
 
     </div>
@@ -713,6 +720,8 @@
 
 
 <div class="joinwith-community">
+     
+
     <h1>Mithia dilshan</h1>
     <p>me and app are her to hel u out and tell us for that</p>
 
@@ -725,82 +734,13 @@
 </div>
 
 
+<app-footer></app-footer>
 
 
 
 
-<div class="footer-main-holder">
-    <div class="part1">
-        <img src="../../../../assets/images/12.jpg" alt="">
-        <span>Colombo's premier fitness destination offering state-of-the-art facilities and personalized training programs since 2015.</span>
-        <div class="contact-social-media">
-            <img src="../../../../assets/images/star.png" alt="">
-            <img src="../../../../assets/images/star.png" alt="">
-            <img src="../../../../assets/images/star.png" alt="">
-            <img src="../../../../assets/images/star.png" alt="">
-        </div>
-
-    </div>
-
-    <div class="part2">
-        <h2 class="title">Quick Links</h2>
-        <a routerLink="#">Home</a>
-        <a routerLink="#">About Us</a>
-        <a routerLink="#">Services</a>
-        <a routerLink="#">Membership</a>
-        <a routerLink="#">Gallery</a>
-        <a routerLink="#">Contact</a>
-    </div>
-
-    <div class="part2">
-        <h2 class="title">Services</h2>
-        <a routerLink="#">Personal Training</a>
-        <a routerLink="#">Group Classes</a>
-        <a routerLink="#">Nutrition Plans</a>
-        <a routerLink="#">Body Composition</a>
-        <a routerLink="#">Functional Training</a>
-        <a routerLink="#">Recovery Services</a>
-    </div>
 
 
-    <div class="part2">
-        <h2 class="title">Contact Info</h2>
-         <div class="footer-icon-holder">
-            <img src="../../../../assets/images/12.jpg" alt="">
-                <div class="fotter-icon-details">
-                    <span>211/5/1 Manis Dias Mawatha,</span>
-                    <span>Boralesgamuwa</span>
-                </div>
-         </div>
-
-         <div class="footer-icon-holder">
-            <img src="../../../../assets/images/12.jpg" alt="">
-                <div class="fotter-icon-details">
-                    <span>+94 71 711 88 77</span>
-                </div>
-         </div>
-
-
-         <div class="footer-icon-holder">
-            <img src="../../../../assets/images/12.jpg" alt="">
-                <div class="fotter-icon-details">
-                    <span>sasasas</span>
-                </div>
-         </div>
-
-         <div class="footer-icon-holder">
-            <img src="../../../../assets/images/12.jpg" alt="">
-                <div class="fotter-icon-details">
-                    <span>Mon-Fri: 5AM-11PM, </span>
-                    <span> Sat-Sun: 5AM-11PM</span>
-                </div>
-         </div>
-
-
-    </div>
-
-
-</div>
 
 
 

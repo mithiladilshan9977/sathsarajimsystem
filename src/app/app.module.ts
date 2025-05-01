@@ -6,17 +6,22 @@ import { AppComponent } from './app.component';
 import { JimHomeComponent } from './home/jim/jim-home/jim-home.component';
 import { RouterModule } from '@angular/router';
 import { MainJimHomeComponent } from './home/jim/main-jim-home.component';
+import { HeaderComponent } from './widgets/header/header.component';
+import { FooterComponent } from './widgets/footer/footer.component';
+import { PackageRegistrationComponent } from './home/jim/package-registration/package-registration.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     JimHomeComponent,
-    MainJimHomeComponent
+    MainJimHomeComponent,
+    HeaderComponent,
+    FooterComponent,
+    PackageRegistrationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot([])
     
   ],
   providers: [],

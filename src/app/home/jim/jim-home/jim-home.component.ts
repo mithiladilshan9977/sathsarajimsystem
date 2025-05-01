@@ -1,14 +1,18 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-jim-home',
   templateUrl: './jim-home.component.html',
-  styleUrls: ['./jim-home.component.css']
+  styleUrls: ['./jim-home.component.css'],
+  
 })
 export class JimHomeComponent  {
 
+  isdaypassselected: boolean = true;
   ismounthselected: boolean = false;
-  isquarterselected: boolean = true;
+  isquarterselected: boolean = false;
+  isbiselected: boolean = false;
   isannualselected: boolean = false;
   isseeallselected: boolean = false;
 
@@ -17,29 +21,26 @@ export class JimHomeComponent  {
   showsuccessstory3: boolean = false;
 
   activeDot: string = '1';
-  activeLink = 'home';
-  scrolled = false;
 
 
-  constructor() { }
+  constructor(
+    private router:Router
+  ) { }
 
  
-  scrollToSection(event: Event, sectionId: string) {
-    event.preventDefault();
-    this.activeLink = sectionId;
   
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const offset = -100;  
-      const y = element.getBoundingClientRect().top + window.pageYOffset + offset;
-  
-      window.scrollTo({
-        top: y,
-        behavior: 'smooth'
-      });
-    }
+  onGetStarted(value1: string, value2: string) {
+    this.router.navigate(['/package-registration', 'daypassse'], {
+      queryParams: { value1, value2 }
+    });
   }
-  
+
+  onGetStartedMonthly(value1: string, value2?: string) {
+    this.router.navigate(['/package-registration', 'mounthlymounthly'], {
+      queryParams: { value1, value2 }
+    });
+  }
+
   
 
   selectChip(event: any,text:string) {
@@ -53,23 +54,59 @@ export class JimHomeComponent  {
       this.isquarterselected = false;
       this.isannualselected = false;
       this.isseeallselected = false;
+      this.isdaypassselected=false;
+      this.isbiselected=false;
       
     } else if (text == 'Quarterly') {
       this.ismounthselected = false;
       this.isquarterselected = true;
       this.isannualselected = false;
       this.isseeallselected = false;
+      this.isdaypassselected=false;
+      this.isbiselected=false;
+
+
     }else if (text == 'Annual') {
       this.ismounthselected = false;
       this.isquarterselected = false;
       this.isannualselected = true;
       this.isseeallselected = false;
+      this.isdaypassselected=false;
+      this.isbiselected=false;
+
+
     }
     else if (text == 'ViewAll') {
       this.ismounthselected = false;
       this.isquarterselected = false;
       this.isannualselected = false;
       this.isseeallselected = true;
+      this.isdaypassselected=false;
+      this.isbiselected=false;
+
+
+    }
+
+    else if (text == 'Daypass') {
+      this.ismounthselected = false;
+      this.isquarterselected = false;
+      this.isannualselected = false;
+      this.isseeallselected = false;
+      this.isdaypassselected=true;
+      this.isbiselected=false;
+
+
+    }
+
+    else if (text == 'BiAnnual') {
+      this.ismounthselected = false;
+      this.isquarterselected = false;
+      this.isannualselected = false;
+      this.isseeallselected = false;
+      this.isdaypassselected=false;
+      this.isbiselected=true;
+
+
     }
 
   }
@@ -113,10 +150,5 @@ export class JimHomeComponent  {
   }
 
 
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
-    const scrollY = window.scrollY || document.documentElement.scrollTop;
-    this.scrolled = scrollY > 0;
-  }
   
 }

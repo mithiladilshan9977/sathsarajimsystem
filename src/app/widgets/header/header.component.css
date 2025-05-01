@@ -1,0 +1,53 @@
+.main-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 10vh;
+    position: sticky;
+    top: 0px;
+    z-index: 100;
+    background-color: var(--back-ground-color);
+    transition: background-color 0.3s ease;
+  }
+  
+  
+.main-logo {
+    width: 50px;
+    height: 50px;
+  }
+  .main-header.scrolled {
+    background-color: var(--header-after-scrolled-color);
+  }
+  
+  .links-holder a {
+    color: var(--light-gray-color);
+    text-decoration: none;
+    margin: 0 10px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+  }
+  
+  .links-holder a.active-link {
+    color: var(--yellow-color);
+    border-bottom: 2px solid var(--yellow-color);
+  }
+
+  .joinnowbtn {
+    border: 1px solid var(--yellow-color);
+    padding: 15px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    background-color: var(--yellow-color);
+    color: black;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .joinnowbtn:hover {
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+    border: 1px solid var(--yellow-color);
+  }

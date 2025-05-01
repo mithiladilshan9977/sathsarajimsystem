@@ -2,19 +2,18 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { JimHomeComponent } from './home/jim/jim-home/jim-home.component';
 import { MainJimHomeComponent } from './home/jim/main-jim-home.component';
+import { PackageRegistrationComponent } from './home/jim/package-registration/package-registration.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: JimHomeComponent,
+  { 
+    path: '', 
+    component: MainJimHomeComponent,
     children: [
-      {
-        path: '',
-        component: MainJimHomeComponent
-      },
-      
+      { path: '', component: JimHomeComponent },  
+      { path: 'package-registration/:packageid', component: PackageRegistrationComponent },
     ]
   }
+  
 ];
 
 @NgModule({
