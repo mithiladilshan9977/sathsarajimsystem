@@ -1,6 +1,13 @@
 <app-header></app-header>
+<app-sign-up *ngIf="issignupisclicked"  (closeSignUpEvent)="issignupisclicked = false"></app-sign-up>
 
-<h1>{{value1}}</h1>
+
+<h1>{{packageName}}</h1>
+
+<p>indi price {{individualPrice}}</p>
+<p>couple price {{couplePrice}}</p>
+
+<p (click)="signupisclicked()">Sign up</p>
 
 
 

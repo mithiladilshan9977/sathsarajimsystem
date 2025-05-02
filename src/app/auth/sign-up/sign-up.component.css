@@ -1,0 +1,181 @@
+.sign-up-form-holder {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.8s ease-in-out;
+  overflow: hidden;
+}
+
+.sign-up-form-holder::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, #e0eafc, #cfdef3);
+  opacity: 0.6; /* Lower the opacity here */
+  z-index: -1;
+}
+
+.inner-sign-up {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 480px;
+  animation: slideUp 0.6s ease-in-out;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input--wrapper,
+.custom_input--wrapper,
+.file-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.input--wrapper label,
+.custom_input--wrapper label,
+.file-wrapper label {
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #333;
+}
+
+.input--wrapper input,
+.custom_input--wrapper input,
+.file-wrapper input {
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: border-color 0.3s;
+}
+
+.input--wrapper input:focus,
+.custom_input--wrapper input:focus,
+.file-wrapper input:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
+
+.input-box {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.input-box img {
+  position: absolute;
+  right: 12px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.input-box img:hover {
+  opacity: 1;
+}
+
+.image-preview {
+  margin-bottom: 10px;
+}
+
+.image-preview img {
+  max-width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+}
+
+.submit-btn {
+  padding: 12px;
+  background: #4a90e2;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background: #3b7dd8;
+}
+
+.move_to-signup {
+  text-align: center;
+  font-size: 14px;
+}
+
+.move_to-signup a {
+  color: #4a90e2;
+  cursor: pointer;
+  font-weight: bold;
+  margin-left: 4px;
+  transition: text-decoration 0.3s;
+}
+
+.move_to-signup a:hover {
+  text-decoration: underline;
+}
+
+.form-footer {
+  margin-top: 10px;
+}
+
+.input--wrapper span {
+  display: inline-block;
+  padding: 8px 16px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.input--wrapper span.selected-option {
+  background-color: yellow;
+  font-weight: bold;
+}
+.selecoption-holder {
+  display: flex;
+  flex-direction: row;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

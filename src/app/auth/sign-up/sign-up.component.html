@@ -1,0 +1,191 @@
+<div class="sign-up-form-holder">
+   
+                    
+    <div class="inner-sign-up" *ngIf="!isloginclicked">
+        <span (click)="closesignup()">close</span>
+        <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()" class="auth-form" >
+ 
+
+            <div class="input--wrapper">
+              <label for="username">Username</label>
+              <input type="text" id="username" formControlName="username" />
+            </div>
+            
+            <div class="input--wrapper">
+              <label for="email">Email</label>
+              <input type="text" id="email" formControlName="emailaddress" />
+            </div>
+            
+            <div class="input--wrapper">
+                <label for="phonernumber">Phone Number</label>
+                <input type="text" id="phonernumber" formControlName="phonernumber" />
+              </div>
+            
+            
+            
+              <div class="input--wrapper">
+                <label for="gender">Gender</label>
+                   <div class="selecoption-holder">
+                                        <span
+                                    (click)="selectGender('Male')"
+                                    [ngClass]="{ 'selected-option': selectedGender === 'Male' }"
+                                    >
+                                    Male
+                                    </span>
+                                    <span
+                                    (click)="selectGender('Female')"
+                                    [ngClass]="{ 'selected-option': selectedGender === 'Female' }"
+                                    >
+                                    Female
+                                    </span>
+                   </div>
+              </div>
+              
+              <div class="input--wrapper">
+                <label for="usedgym">Used Gym Before</label>
+                  <div class="selecoption-holder">
+                    <span
+                  (click)="selectUsedGym('Yes')"
+                  [ngClass]="{ 'selected-option': usedGymBefore === 'Yes' }"
+                >
+                  Yes
+                </span>
+                <span
+                  (click)="selectUsedGym('No')"
+                  [ngClass]="{ 'selected-option': usedGymBefore === 'No' }"
+                >
+                  No
+                </span>
+                  </div>
+              </div>
+
+            
+            
+              <div class="input--wrapper">
+                <label for="birthday">Birth Date</label>
+                 <input type="date" id="birthday">
+              </div>
+            
+            
+            
+            <div class="custom_input--wrapper">
+              <label for="password">Password</label>
+              <div class="input-box">
+                <input
+                  [type]="passwordType"
+                  id="password"
+                  formControlName="password"
+                />
+                <img
+                  [src]="passwordIcon"
+                  alt="hide password"
+                  width="21"
+                  (click)="togglePasswordVisibility('password')"
+                />
+              </div>
+            </div>
+            
+            <div class="custom_input--wrapper">
+              <label for="reenterpassword">Re-enter password</label>
+              <div class="input-box">
+                <input
+                  [type]="reenterPasswordType"
+                  id="reenterpassword"
+                  formControlName="reenterpassword"
+                />
+                <img
+                  [src]="reenterPasswordIcon"
+                  alt="show password"
+                  width="21"
+                  (click)="togglePasswordVisibility('reenterpassword')"
+                />
+              </div>
+            </div>
+            
+            <div class="file-wrapper">
+              <div *ngIf="imagePreview" class="image-preview">
+                <img [src]="imagePreview" alt="Company Logo" />
+              </div>
+              <label for="companylogo">Upload your profile image.</label>
+              <input
+                type="file"
+                id="companylogo"
+                formControlName="commapylogo"
+                accept="image/png, image/jpeg"
+                (change)="onImageSelect($event)"
+              />
+            </div>
+            
+            <button
+              type="submit"
+              [disabled]="!signUpForm.valid"
+              class="submit-btn"
+            >
+              Submit
+            </button>
+            
+            <div class="move_to-signup">
+                Already have an account?
+                <a (click)="login()">Log In</a>
+              </div>
+            </form>
+    </div>
+
+
+
+
+
+
+
+
+<form
+[formGroup]="loginFormOtherUser"
+(ngSubmit)="onSubmitLoginOtherUserDetails()"
+*ngIf="isloginclicked"
+>
+<a class="move_to-signup" (click)="signup()">Sign up</a>
+
+
+<div class="input--wrapper">
+  <label for="emailaddress">Email address</label>
+  <input
+    type="email"
+    id="emailaddress"
+    formControlName="emailaddress"
+  />
+</div>
+
+<div class="custom_input--wrapper">
+  <label for="password">Password</label>
+  <div class="input-box">
+    <input
+      [type]="isPasswordVisible ? 'text' : 'password'"
+      id="password"
+      formControlName="password"
+    />
+    <img
+      [src]="
+        isPasswordVisible
+          ? 'assets/images/pwd-show.png'
+          : 'assets/images/pwd-hidden.png'
+      "
+      alt="toggle password"
+      width="21"
+      (click)="togglePasswordVisibilityLogin()"
+    />
+  </div>
+</div>
+
+<div class="form-footer">
+  <button
+    type="submit"
+    [disabled]="!loginFormOtherUser.valid"
+    class="submit-btn"
+  >
+    Log in
+  </button>
+</div>
+</form>
+
+
+</div>

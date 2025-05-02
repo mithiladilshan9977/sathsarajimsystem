@@ -8,7 +8,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 export class HeaderComponent  {
   activeLink = 'home';
   scrolled = false;
-
+  isMenuOpen: boolean = false;
 
   constructor() { }
  

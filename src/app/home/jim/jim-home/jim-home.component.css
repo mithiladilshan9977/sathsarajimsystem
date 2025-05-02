@@ -1,6 +1,3 @@
-
-
-
 .video-container {
   position: relative;
   width: 100%;
@@ -12,7 +9,9 @@
   height: 100%;
   object-fit: cover;
 }
-
+.contact-holder {
+  margin: 10px 0px;
+}
 .video-overlay {
   position: absolute;
   top: 0;
@@ -36,7 +35,7 @@
 }
 .video-text-below {
   position: absolute;
-  top: 40%;
+  top: 10%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
@@ -47,7 +46,7 @@
 }
 .video-text-below-small {
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
@@ -58,7 +57,7 @@
 }
 .video-btn-holder {
   position: absolute;
-  top: 60%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
@@ -75,7 +74,7 @@
   color: var(--text-color);
   font-size: 20px;
 }
-.form-container{
+.form-container {
   background-color: white;
 }
 .video-btn-holder .learnmore {
@@ -89,7 +88,7 @@
 }
 .count-holder {
   position: absolute;
-  top: 70%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
@@ -114,15 +113,6 @@
 .sub-title {
   color: var(--text-color);
   font-size: 25px;
-}
-
-.about-us-holder,
-.services-holder,
-.memebership-holder,
-.gallery-holder,
-.success-holder,
-.contact-holder {
-  height: 100vh;
 }
 
 .about-us-inner-title-holder {
@@ -208,7 +198,8 @@
 
 .first-part .span2 {
   color: var(--text-color);
-  font-size: 16px;
+  font-size: 20px;
+
   margin-top: 10px;
   text-align: left;
 }
@@ -224,10 +215,12 @@
   gap: 0.5rem;
 }
 .aboutulist img {
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   flex-shrink: 0;
+  background-color: var(--yellow-color);
+  padding: 8px;
 }
 
 .boxeses-holder-outer {
@@ -250,14 +243,19 @@
   justify-content: center;
   height: 300px;
 }
-
-.boxeses-holder-outer .box img {
+.image-wrapper {
   width: 60px;
   height: 60px;
   margin-top: 15px;
   border-radius: 50%;
   margin-bottom: 15px;
+  background-color: var(--yellow-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
 }
+
 .box-main-text {
   color: black;
   font-weight: bold;
@@ -359,7 +357,6 @@
 .savetext {
   color: var(--yellow-color);
 }
-
 
 .image-main-outer-holder {
   display: flex;
@@ -515,8 +512,10 @@
   font-weight: bold;
   font-size: 20px;
 }
-.icon-details span {
+.icon-details span,
+.icon-details a {
   color: rgba(255, 255, 255, 0.534);
+  text-decoration: none;
 }
 .contact-social-media {
   display: flex;
@@ -563,13 +562,17 @@ textarea {
 }
 .joinwith-community {
   width: 100%;
-  margin: 10px;
+  margin-top: 10px;
   background-color: var(--yellow-color);
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 280px;
   justify-content: center;
+}
+.joinwith-community h1,
+.joinwith-community p {
+  text-align: center;
 }
 .emailsend-holder {
   margin-top: 15px;
@@ -592,4 +595,112 @@ textarea {
   background-color: black;
   color: white;
 }
+.slider-image-wrapper {
+  background-color: var(--yellow-color);
+  border-radius: 50%;
+  padding: 10px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  align-items: center;
+  width: 40px;
+}
+.slider-image-wrapper img {
+  max-width: 100%;
+  height: auto;
+}
 
+@media (max-width: 500px) {
+  .bg-video {
+    height: 70vh;
+  }
+  .video-text-below {
+    top: 10%;
+    left: 50%;
+    font-size: 2.5rem;
+  }
+  .video-btn-holder {
+    top: 43%;
+    left: 50%;
+  }
+  .video-btn-holder .starttoday {
+    font-size: 20px;
+    padding: 15px;
+  }
+  .video-btn-holder .learnmore {
+    font-size: 20px;
+    padding: 15px;
+  }
+  .video-text-below-small {
+    top: 30%;
+    left: 50%;
+    font-size: 16px;
+    width: 84vw;
+  }
+  .count-holder {
+    top: 70%;
+    left: 50%;
+  }
+  .urtransformjurnystartshear-outer-holder {
+    width: 90%;
+    flex-direction: column;
+  }
+  .secods-imahe-holder-part {
+    max-width: 100%;
+    height: auto;
+  }
+  .about-us-holder {
+    display: flex;
+    flex-direction: column;
+  }
+  .boxeses-holder-outer,
+  .imageholder,
+  .success-story-1 {
+    flex-direction: column;
+  }
+  .main-slider-holder {
+    width: 90%;
+  }
+  .contact-main-outer-holder {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+  }
+  .contact-form {
+    width: 100%;
+    margin: 10px 0px;
+  }
+  .contact-social-media {
+    justify-content: center;
+  }
+  .joinwith-community {
+    width: 100%;
+  }
+  .wearemorethanajimtext[_ngcontent-okv-c50] {
+    font-size: 0.9rem;
+  }
+  .whychooseustext {
+    font-size: 2rem;
+  }
+  .first-part .span1,
+  .first-part .span2 {
+    font-size: 16px;
+  }
+  .for-mounth {
+    flex-direction: column;
+  }
+  .holder1,
+  .holder2,
+  .holder3 {
+    height: auto;
+    width: 100%;
+  }
+  .video-btn-holder {
+    width: max-content;
+  }
+  .secods-imahe-holder-part img {
+    max-width: 100%;
+    height: auto;
+  }
+}

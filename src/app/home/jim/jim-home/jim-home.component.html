@@ -15,6 +15,7 @@
     
     <div class="video-text-below">
       Elevate your life
+      
     </div>
 
     <div class="video-text-below-small">
@@ -62,7 +63,7 @@
 <div id="about" class="about-us-holder">
        <div class="about-us-inner-title-holder">
            <h1 class="whychooseustext">Why choose STEPUP</h1>
-           <p class="wearemorethanajimtext">We are more than a jim-mithila dilshan</p>
+           <p class="wearemorethanajimtext">We're more than just a gym - we're a fitness family</p>
        </div>
 
 
@@ -75,10 +76,10 @@
                                 Our 10,000 sqft state-of-the-art facility features cutting-edge equipment imported from Europe and the USA, ensuring you get the best workout experience possible.
                             </span>
                             <ul class="aboutulist">
-                                <li><img src="../../../../assets/images/12.jpg" alt=""> Certified professional trainers</li>
-                                <li><img src="../../../../assets/images/12.jpg" alt=""> Personalized workout plans</li>
-                                <li><img src="../../../../assets/images/12.jpg" alt=""> Nutrition counseling</li>
-                                <li><img src="../../../../assets/images/12.jpg" alt=""> 24/7 security & CCTV</li>
+                                <li><img src="../../../../assets/images/tick.svg" alt=""> Certified professional trainers</li>
+                                <li><img src="../../../../assets/images/tick.svg" alt=""> Personalized workout plans</li>
+                                <li><img src="../../../../assets/images/tick.svg" alt=""> Nutrition counseling</li>
+                                <li><img src="../../../../assets/images/tick.svg" alt=""> 24/7 security & CCTV</li>
                             </ul>
                      </div>
 
@@ -120,7 +121,9 @@
        <div class="boxeses-holder-outer">
  
           <div class="box">
-            <img src="../../../../assets/images/12.jpg" alt="">
+            <div class="image-wrapper">
+                <img src="../../../../assets/images/dumble.svg" alt="">
+            </div>
               <p class="box-main-text">Personal Training</p> 
               <p class="box-main-text-below">1-on-1 sessions with certified trainers to help you achieve specific fitness goals with customized workout plans.</p>
 
@@ -128,7 +131,10 @@
           </div>
 
           <div class="box">
-            <img src="../../../../assets/images/12.jpg" alt="">
+            <div class="image-wrapper">
+                <img src="../../../../assets/images/group.svg" alt="">
+            </div>
+           
               <p class="box-main-text">Group Classes</p>
               <p class="box-main-text-below">Energetic group workouts including HIIT, Yoga, Zumba, Spin, and more with our expert instructors.</p>
 
@@ -136,7 +142,10 @@
           </div>
 
           <div class="box">
-            <img src="../../../../assets/images/12.jpg" alt="">
+            <div class="image-wrapper">
+                <img src="../../../../assets/images/food.svg" alt="">
+            </div>
+           
               <p class="box-main-text">Nutrition Plans</p>
               <p class="box-main-text-below">PCustomized meal plans designed by nutritionists to complement your fitness journey and optimize results.</p>
 
@@ -149,7 +158,11 @@
 
        <div class="boxeses-holder-outer">
         <div class="box">
-          <img src="../../../../assets/images/12.jpg" alt="">
+            <div class="image-wrapper">
+                <img src="../../../../assets/images/heart-pulse-solid.svg" alt="">
+            </div>
+
+         
             <p class="box-main-text">Body Composition</p>
             <p class="box-main-text-below">Advanced body scanning technology to track your progress with precise measurements and analytics.</p>
 
@@ -157,7 +170,11 @@
         </div>
 
         <div class="box">
-          <img src="../../../../assets/images/12.jpg" alt="">
+            <div class="image-wrapper">
+                <img src="../../../../assets/images/running-solid.svg" alt="">
+            </div>
+
+          
             <p class="box-main-text">Functional Training</p>
             <p class="box-main-text-below">Specialized programs focusing on movement patterns to improve your daily life and athletic performance.</p>
 
@@ -165,7 +182,11 @@
         </div>
 
          <div class="box">
-          <img src="../../../../assets/images/12.jpg" alt="">
+            <div class="image-wrapper">
+                <img src="../../../../assets/images/recover.svg" alt="">
+            </div>
+
+          
             <p class="box-main-text">Recovery Services</p>
             <p class="box-main-text-below">Massage therapy, cryotherapy, and other recovery modalities to enhance your performance and wellbeing.</p>
 
@@ -226,7 +247,6 @@
             </div>
 
             
-             <a routerLink="/home/jim/registration">registration</a>
 
             <button class="getstartedbtn" (click)="onGetStarted(value1.innerText, value2.innerText)">Get Started</button>
             </div>
@@ -248,7 +268,7 @@
 
                     <!-- (click)="onGetStartedMonthly(value1.innerText, value2.innerText)" -->
 
-                      <button class="getstartedbtn" >Get Started</button>
+                      <button class="getstartedbtn" (click)="onGetStartedMounthlymounthy(value1.innerText, '0')" >Get Started</button>
                   </div>
                   
 
@@ -261,17 +281,17 @@
 
                     <div class="stepperpackageinnerdetails">
                         <span class="visemounthly">Individual</span>
-                        <span class="viseamount">20,000</span>
+                        <span class="viseamount" #value3>20,000</span>
                     </div>
 
                     <div class="stepperpackageinnerdetails">
                         <span class="visemounthly">Couple</span>
-                        <span class="viseamount">30,000</span>
+                        <span class="viseamount" #value4>30,000</span>
                     </div>
 
                    
 
-                      <button class="getstartedbtn" >Get Started</button>
+                      <button class="getstartedbtn" (click)="onGetStartedMounthlypersonal(value3.innerText, value4.innerText)" >Get Started</button>
                   </div>
 
 
@@ -284,14 +304,14 @@
                   <h1 class="membershiptitle">Morning Glory</h1>
                   <div class="stepperpackageinnerdetails">
                       <span class="visemounthly">Individual</span>
-                      <span class="viseamount">7,500</span>
+                      <span class="viseamount" #value5>7,500</span>
                   </div>
                   <div class="stepperpackageinnerdetails">
                       <span class="visemounthly">Couple</span>
-                      <span class="viseamount">14,000</span>
+                      <span class="viseamount" #value6>14,000</span>
                   </div>
 
-                    <button class="getstartedbtn">Start Morings Right</button>
+                    <button class="getstartedbtn" (click)="onGetStartedQuarterlyMoringGlory(value5.innerText, value6.innerText)" >Start Morings Right</button>
                 </div>
                 <div class="holder2">
                   <span class="popularity">PREMIUM</span>
@@ -299,14 +319,14 @@
 
                   <div class="stepperpackageinnerdetails">
                     <span class="visemounthly">Individual</span>
-                    <span class="viseamount">50,000</span>
+                    <span class="viseamount" #value6>50,000</span>
                 </div>
                 <div class="stepperpackageinnerdetails">
                     <span class="visemounthly">Couple</span>
-                    <span class="viseamount">85,000</span>
+                    <span class="viseamount" #value7>85,000</span>
                 </div>
                    
-                  <button class="getstartedbtn">Train Like a Pro</button>
+                  <button class="getstartedbtn" (click)="onGetStartedQuarterlypersonal(value6.innerText, value7.innerText)">Train Like a Pro</button>
 
                 </div>
 
@@ -316,14 +336,14 @@
   
                     <div class="stepperpackageinnerdetails">
                         <span class="visemounthly">Individual</span>
-                        <span class="viseamount">14,000</span>
+                        <span class="viseamount" #value8>14,000</span>
                     </div>
                     <div class="stepperpackageinnerdetails">
                         <span class="visemounthly">Couple</span>
-                        <span class="viseamount">25,000</span>
+                        <span class="viseamount" #value9>25,000</span>
                     </div>
                      
-                    <button class="getstartedbtn">Train Like a Pro</button>
+                    <button class="getstartedbtn" (click)="onGetStartedQuarterlystepper(value8.innerText, value9.innerText)">Train Like a Pro</button>
   
                   </div>
 
@@ -337,14 +357,14 @@
               <h1 class="membershiptitle">Morning Glory</h1>
               <div class="stepperpackageinnerdetails">
                 <span class="visemounthly">Individual</span>
-                <span class="viseamount">15,000</span>
+                <span class="viseamount"  #value10>15,000</span>
             </div>
             <div class="stepperpackageinnerdetails">
                 <span class="visemounthly">Couple</span>
-                <span class="viseamount">25,000</span>
+                <span class="viseamount"  #value11>25,000</span>
             </div>
 
-                <button class="getstartedbtn">Start Morings Right</button>
+                <button class="getstartedbtn" (click)="onGetStartedbiannualmorningglory(value10.innerText, value11.innerText)">Start Morings Right</button>
             </div>
             <div class="holder2">
               <span class="popularity">PREMIUM</span>
@@ -352,14 +372,14 @@
 
               <div class="stepperpackageinnerdetails">
                 <span class="visemounthly">Individual</span>
-                <span class="viseamount">85,000</span>
+                <span class="viseamount" #value12>85,000</span>
             </div>
             <div class="stepperpackageinnerdetails">
                 <span class="visemounthly">Couple</span>
-                <span class="viseamount">135,000</span>
+                <span class="viseamount" #value13>135,000</span>
             </div>
                
-              <button class="getstartedbtn">Train Like a Pro</button>
+              <button class="getstartedbtn" (click)="onGetStartedbiannualpersonaltraining(value12.innerText, value13.innerText)">Train Like a Pro</button>
 
             </div>
 
@@ -369,14 +389,14 @@
   
                 <div class="stepperpackageinnerdetails">
                     <span class="visemounthly">Individual</span>
-                    <span class="viseamount">35,000</span>
+                    <span class="viseamount" #value14>35,000</span>
                 </div>
                 <div class="stepperpackageinnerdetails">
                     <span class="visemounthly">Couple</span>
-                    <span class="viseamount">45,000</span>
+                    <span class="viseamount" #value15>45,000</span>
                 </div>
                  
-                <button class="getstartedbtn">Train Like a Pro</button>
+                <button class="getstartedbtn"  (click)="onGetStartedbiannualstepper(value14.innerText, value15.innerText)">Train Like a Pro</button>
   
               </div>
 
@@ -392,54 +412,60 @@
 
 
            <div class="for-mounth" *ngIf="isannualselected">
+
+            <div class="holder2">
+                <h1 class="membershiptitle">Morning Glory</h1>
+  
+                <div class="stepperpackageinnerdetails">
+                  <span class="visemounthly">Individual</span>
+                  <span class="viseamount" #value16>25,000</span>
+              </div>
+              <div class="stepperpackageinnerdetails">
+                  <span class="visemounthly">Couple</span>
+                  <span class="viseamount" #value17>40,000</span>
+              </div>
+                 
+                <button class="getstartedbtn" (click)="onGetStartedannualmoringglory(value16.innerText, value17.innerText)">Train Like a Pro</button>
+  
+              </div>
+
+
+              <div class="holder3">
+                <span class="popularity">PREMIUM</span>
+                <h1 class="membershiptitle">Personal Training</h1>
+  
+                <div class="stepperpackageinnerdetails">
+                    <span class="visemounthly">Individual</span>
+                    <span class="viseamount" #value18>150,000</span>
+                </div>
+                <div class="stepperpackageinnerdetails">
+                    <span class="visemounthly">Couple</span>
+                    <span class="viseamount" #value19>250,000</span>
+                </div>
+                 
+                <button class="getstartedbtn" (click)="onGetStartedannualpersonal(value18.innerText, value19.innerText)">Train Like a Pro</button>
+  
+              </div>
+
             <div class="holder1">
               <span class="popularity">MOST POPULAR</span>
 
               <h1 class="membershiptitle">Stepper Package</h1>
               <div class="stepperpackageinnerdetails">
                 <span class="visemounthly">Individual</span>
-                <span class="viseamount">42,000</span>
+                <span class="viseamount" #value20>42,000</span>
             </div>
             <div class="stepperpackageinnerdetails">
                 <span class="visemounthly">Couple</span>
-                <span class="viseamount">70,000</span>
+                <span class="viseamount" #value21>70,000</span>
             </div>
 
-                <button class="getstartedbtn">Start Morings Right</button>
+                <button class="getstartedbtn" (click)="onGetStartedannualstepper(value20.innerText, value21.innerText)">Start Morings Right</button>
             </div>
 
-            <div class="holder2">
-              <h1 class="membershiptitle">Moring Glory</h1>
+            
 
-              <div class="stepperpackageinnerdetails">
-                <span class="visemounthly">Individual</span>
-                <span class="viseamount">25,000</span>
-            </div>
-            <div class="stepperpackageinnerdetails">
-                <span class="visemounthly">Couple</span>
-                <span class="viseamount">40,000</span>
-            </div>
-               
-              <button class="getstartedbtn">Train Like a Pro</button>
-
-            </div>
-
-            <div class="holder3">
-                <span class="popularity">PREMIUM</span>
-                <h1 class="membershiptitle">Personal Training</h1>
-  
-                <div class="stepperpackageinnerdetails">
-                    <span class="visemounthly">Individual</span>
-                    <span class="viseamount">150,000</span>
-                </div>
-                <div class="stepperpackageinnerdetails">
-                    <span class="visemounthly">Couple</span>
-                    <span class="viseamount">250,000</span>
-                </div>
-                 
-                <button class="getstartedbtn">Train Like a Pro</button>
-  
-              </div>
+         
 
        </div>
 
@@ -507,7 +533,7 @@
         <div class="success-story-1" *ngIf="showsuccessstory1">
             
                 <div class="slider-image-holder">
-                    <img src="../../../../assets/images/12.jpg" alt="">
+                    <img src="../../../../assets/images/1.jpg" alt="">
                     <button class="success-clickmorebtn">click here</button>
                 </div>
              
@@ -520,10 +546,10 @@
                     <img src="../../../../assets/images/star.png" alt="">
                 </div>
                 <span class="success-text">
-                    mdawjhdkj dkawjdhw akjdhw kdjawh daj wdhwk ajdh akwjd kdjwahdkawjh dkawjdha wkdjh kdjwahdk jawhd kawjh dkaw jhd
+                    "STEPUP GYM completely changed my life. The trainers understood my goals and created a personalized plan that worked with my busy schedule. I've lost 28kg and gained so much confidence!"
                 </span>
-                <span class="sucess-username">mithila dilshan</span>
-                <span class="success-date">se 2025 2154</span>
+                <span class="sucess-username">Ravi Perera</span>
+                <span class="success-date">Member since 2020</span>
             </div>
         </div>
 
@@ -532,7 +558,7 @@
         <div class="success-story-1" *ngIf="showsuccessstory2">
             
             <div class="slider-image-holder">
-                <img src="../../../../assets/images/12.jpg" alt="">
+                <img src="../../../../assets/images/2.jpg" alt="">
                 <button class="success-clickmorebtn">click here</button>
             </div>
          
@@ -545,10 +571,10 @@
                 <img src="../../../../assets/images/star.png" alt="">
             </div>
             <span class="success-text">
-                mdawjhdkj dfwafawfawfawfawf akwjd kdjwahdkawjh dkawjdha wkdjfwafawfawfh kdjwahfwafawfwhd kawjh dkaw jhd
+                "The body composition analysis and nutrition guidance helped me gain 12kg of lean muscle in just 8 months. The trainers' expertise is unmatched in Colombo!"
             </span>
-            <span class="sucess-username">mithila dilshan</span>
-            <span class="success-date">se 2025 2154</span>
+            <span class="sucess-username">Sanjaya Fernando</span>
+            <span class="success-date">Member since 2021</span>
         </div>
     </div>
 
@@ -556,7 +582,7 @@
     <div class="success-story-1" *ngIf="showsuccessstory3">
             
         <div class="slider-image-holder">
-            <img src="../../../../assets/images/12.jpg" alt="">
+            <img src="../../../../assets/images/3.jpg" alt="">
             <button class="success-clickmorebtn">click here</button>
         </div>
      
@@ -569,10 +595,10 @@
             <img src="../../../../assets/images/star.png" alt="">
         </div>
         <span class="success-text">
-            mdawjhdkj dkawjdhw afwafwafwafawh dkawjdha wkdjh kdjwahdk jawhd kawjh dkaw jhd
+           "The endurance training program helped me complete my first marathon at age 45! The community support at STEPUP kept me motivated throughout my journey."
         </span>
-        <span class="sucess-username">mithila dilshan</span>
-        <span class="success-date">se 2025 2154</span>
+        <span class="sucess-username">Nimali Silva</span>
+        <span class="success-date">Member since 2019</span>
     </div>
 </div>
 
@@ -583,7 +609,10 @@
     </div>
 
     <div class="navigation-dot-holder">
-        <span (click)="goprevious()" class="handelers"><</span>
+        <div class="slider-image-wrapper" (click)="goprevious()">
+            <img src="../../../../assets/images/left-arrow.svg" alt="">
+        </div>
+      
         <span 
           (click)="showsuccessstory('1')" 
           [class.active]="activeDot === '1'"
@@ -601,7 +630,11 @@
           [class.active]="activeDot === '3'"
           class="sucess-dot"
         ></span>
-        <span (click)="goforward()" class="handelers">></span>
+        <div class="slider-image-wrapper" (click)="goforward()">
+            <img src="../../../../assets/images/right-arrow.svg" alt="">
+        </div>
+
+     
       </div>
 
 </div>
@@ -626,11 +659,11 @@
         <div class="contact-part-1">
             <div class="contact-main-details">
                  
-                            <img src="../../../../assets/images/star.png" alt="">
+                            <img src="../../../../assets/images/location.svg" alt="">
                             <div class="icon-details">
                                 <p class="icon-details-title">Location</p>
-                                <span>mithila dilshan</span>
-                                <span>mithila dilshfwafawfan</span>
+                                <span>211/5/1 Manis Dias Mawatha, Boralesgamuwa</span>
+                             
                             </div>
                
 
@@ -639,11 +672,11 @@
 
             <div class="contact-main-details">
                  
-                <img src="../../../../assets/images/star.png" alt="">
+                <img src="../../../../assets/images/phone.svg" alt="">
                 <div class="icon-details">
                     <p class="icon-details-title">Phone</p>
-                    <span>mithila dilshan</span>
-                    <span>mithila dilshfwafawfan</span>
+                    <span>+94 112 345 678</span>
+                    <span>+94 71 711 88 77</span>
                 </div>
    
 
@@ -653,11 +686,11 @@
 
             <div class="contact-main-details">
                  
-                <img src="../../../../assets/images/star.png" alt="">
+                <img src="../../../../assets/images/email.svg" alt="">
                 <div class="icon-details">
                     <p class="icon-details-title">Email</p>
-                    <span>mithila dilshan</span>
-                    <span>mithila dilshfwafawfan</span>
+                    <a href="mailto:info&#64;stepupgym.com">info&#64;stepupgym.com</a>
+                    <a href="mailto:memberships&#64;stepupgym.com">memberships&#64;stepupgym.com</a>
                 </div>
    
 
@@ -667,11 +700,11 @@
 
             <div class="contact-main-details">
                  
-                <img src="../../../../assets/images/star.png" alt="">
+                <img src="../../../../assets/images/time.svg" alt="">
                 <div class="icon-details">
                     <p class="icon-details-title">Hours</p>
-                    <span>mithila dilshan</span>
-                    <span>mithila dilshfwafawfan</span>
+                    <span>Monday-Friday: 5:00 AM - 11:00 PM</span>
+                    <span>Saturday-Sunday: 5:00 AM - 11:00 PM</span>
                 </div>
    
 
@@ -722,8 +755,8 @@
 <div class="joinwith-community">
      
 
-    <h1>Mithia dilshan</h1>
-    <p>me and app are her to hel u out and tell us for that</p>
+    <h1>Join With Our Fitness Community</h1>
+    <p>Subscribe to receive workout tips, nutrition advices and exclusive offers</p>
 
     <div class="emailsend-holder">
         <form action="">

@@ -9,6 +9,10 @@ import { MainJimHomeComponent } from './home/jim/main-jim-home.component';
 import { HeaderComponent } from './widgets/header/header.component';
 import { FooterComponent } from './widgets/footer/footer.component';
 import { PackageRegistrationComponent } from './home/jim/package-registration/package-registration.component';
+import { SignUpComponent } from './auth/sign-up/sign-up.component';
+import { MainAuthComponent } from './auth/main-auth.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,11 +21,15 @@ import { PackageRegistrationComponent } from './home/jim/package-registration/pa
     MainJimHomeComponent,
     HeaderComponent,
     FooterComponent,
-    PackageRegistrationComponent
+    PackageRegistrationComponent,
+    SignUpComponent ,
+    MainAuthComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule  
     
   ],
   providers: [],

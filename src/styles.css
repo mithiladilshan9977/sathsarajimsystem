@@ -5,6 +5,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* img {
+  max-width: 100%;
+  height: auto;
+} */
 
 :root {
   --back-ground-color: #000000;

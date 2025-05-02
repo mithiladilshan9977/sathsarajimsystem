@@ -35,11 +35,84 @@ export class JimHomeComponent  {
     });
   }
 
-  onGetStartedMonthly(value1: string, value2?: string) {
+  onGetStartedMounthlymounthy(value1: string, value2?: string) {
     this.router.navigate(['/package-registration', 'mounthlymounthly'], {
       queryParams: { value1, value2 }
     });
   }
+
+  onGetStartedMounthlypersonal(value1: string, value2?: string) {
+    this.router.navigate(['/package-registration', 'mounthlypersonal'], {
+      queryParams: { value1, value2 }
+    });
+  }
+
+  onGetStartedQuarterlyMoringGlory(value1: string, value2?: string) {
+    this.router.navigate(['/package-registration', 'quarterlymoringglory'], {
+      queryParams: { value1, value2 }
+    });
+  }
+
+  onGetStartedQuarterlypersonal(value1: string, value2?: string) {
+    this.router.navigate(['/package-registration', 'quarterlypersonal'], {
+      queryParams: { value1, value2 }
+    });
+  }
+  onGetStartedQuarterlystepper(value1: string, value2?: string) {
+    this.router.navigate(['/package-registration', 'quarterlystepper'], {
+      queryParams: { value1, value2 }
+    });
+  }
+
+  onGetStartedbiannualmorningglory(value1: string, value2?: string) {
+    this.router.navigate(['/package-registration', 'biannualmorningglory'], {
+      queryParams: { value1, value2 }
+    });
+  }
+
+  onGetStartedbiannualpersonaltraining(value1: string, value2?: string) {
+    this.router.navigate(['/package-registration', 'biannualpersonal'], {
+      queryParams: { value1, value2 }
+    });
+  }
+  onGetStartedbiannualstepper(value1: string, value2?: string) {
+    this.router.navigate(['/package-registration', 'biannualstepper'], {
+      queryParams: { value1, value2 }
+    });
+  }
+
+
+
+
+
+  onGetStartedannualmoringglory(value1: string, value2?: string) {
+    this.router.navigate(['/package-registration', 'annualmorningglory'], {
+      queryParams: { value1, value2 }
+    });
+  }
+
+  onGetStartedannualpersonal(value1: string, value2?: string) {
+    this.router.navigate(['/package-registration', 'annualpersonal'], {
+      queryParams: { value1, value2 }
+    });
+  }
+
+  onGetStartedannualstepper(value1: string, value2?: string) {
+    this.router.navigate(['/package-registration', 'annualstepper'], {
+      queryParams: { value1, value2 }
+    });
+  }
+
+
+
+
+  
+
+
+
+
+
+
 
   
 

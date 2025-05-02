@@ -1,52 +1,20 @@
 <div class="main-header" [class.scrolled]="scrolled">
-    <img src="../../../../assets/images/logo.png" alt="" class="main-logo" />
-  
-    <div class="links-holder">
-      <a 
-        href="#home" 
-        [class.active-link]="activeLink === 'home'" 
-        (click)="scrollToSection($event,'home')"
-      >Home</a>
-  
-      <a 
-        href="#about" 
-        [class.active-link]="activeLink === 'about'" 
-        (click)="scrollToSection($event,'about')"
-      >About</a>
-  
-      <a 
-        href="#services" 
-        [class.active-link]="activeLink === 'services'" 
-        (click)="scrollToSection($event,'services')"
-      >Services</a>
-  
-      <a 
-        href="#membership" 
-        [class.active-link]="activeLink === 'membership'" 
-        (click)="scrollToSection($event,'membership')"
-      >Membership</a>
-  
-      <a 
-        href="#gallery" 
-        [class.active-link]="activeLink === 'gallery'" 
-        (click)="scrollToSection($event,'gallery')"
-      >Gallery</a>
-  
-      <a 
-        href="#success" 
-        [class.active-link]="activeLink === 'success'" 
-        (click)="scrollToSection($event,'success')"
-      >Success Stories</a>
-  
-      <a 
-        href="#contact" 
-        [class.active-link]="activeLink === 'contact'" 
-        (click)="scrollToSection($event,'contact')"
-      >Contact</a>
-  
-      <button 
-        class="joinnowbtn"
-        (click)="scrollToSection($event,'join')"
-      >Join Now</button>
-    </div>
+  <img src="../../../../assets/images/logo.png" alt="" class="main-logo" />
+
+  <!-- Toggle button for mobile -->
+  <button class="toggle-btn" (click)="isMenuOpen = !isMenuOpen">
+    ☰
+  </button>
+
+  <!-- Desktop links (hidden on small screens) -->
+  <div class="links-holder" [class.open]="isMenuOpen">
+    <a href="#home" [class.active-link]="activeLink === 'home'" (click)="scrollToSection($event,'home')">Home</a>
+    <a href="#about" [class.active-link]="activeLink === 'about'" (click)="scrollToSection($event,'about')">About</a>
+    <a href="#services" [class.active-link]="activeLink === 'services'" (click)="scrollToSection($event,'services')">Services</a>
+    <a href="#membership" [class.active-link]="activeLink === 'membership'" (click)="scrollToSection($event,'membership')">Membership</a>
+    <a href="#gallery" [class.active-link]="activeLink === 'gallery'" (click)="scrollToSection($event,'gallery')">Gallery</a>
+    <a href="#success" [class.active-link]="activeLink === 'success'" (click)="scrollToSection($event,'success')">Success Stories</a>
+    <a href="#contact" [class.active-link]="activeLink === 'contact'" (click)="scrollToSection($event,'contact')">Contact</a>
+    <button class="joinnowbtn" (click)="scrollToSection($event,'join')">Join Now</button>
   </div>
+</div>
