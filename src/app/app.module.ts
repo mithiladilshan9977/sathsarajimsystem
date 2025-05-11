@@ -23,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     PackageRegistrationComponent,
     SignUpComponent ,
-    MainAuthComponent
+    MainAuthComponent,
+    
   ],
   imports: [
     BrowserModule,
